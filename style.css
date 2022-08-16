@@ -1,0 +1,362 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+  /* background-color: #b1a79f; */
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Header */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em;
+  z-index: 10;
+}
+
+.scrolling{
+  background-color: #fff;
+}
+
+.logo {
+  font-weight: 500;
+}
+
+.logo span {
+  color: #ec6507;
+}
+
+.nav-list {
+  position: absolute;
+  background-color: #ec6507;
+  top: 4.5em;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 0vh;
+  border-radius: .3em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  overflow-y: hidden;
+  transition: all 0.5s ease;
+  z-index: 10;
+}
+
+.nav-item {
+  text-align: center;
+  text-transform: capitalize;
+  width: 100%;
+}
+
+.nav-item a {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.show-nav {
+  height: 30vh;
+}
+
+.nav {
+  min-width: 43px;
+  width: 13%;
+  transition: all 0.5s ease;
+}
+
+.open-mobile-nav{
+  width: 50%;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.1em;
+  padding: 0.5em 0.2em;
+  border-radius: 0.2em;
+  background-color: #fff;
+}
+
+.search-container input {
+  border: none;
+  outline: none;
+  border-right: 1px solid black;
+  font-size: 0.8rem;
+  width: 0%;
+  transition: all 0.5s ease;
+}
+
+.search-container span,
+.search-container a {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.menu-btns{
+  position: absolute;
+  bottom: -2em;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: .1em 1em;
+  border-radius: .2em;
+  z-index: 11;
+}
+
+.menu-btns span{
+  font-size: 1.6rem;
+  color: #fff;
+}
+
+.hide-btn{
+  display: none;
+}
+
+@media screen and (min-width: 700px) {
+  .nav {
+    width: auto;
+    display: flex;
+    gap: 1em;
+    height: 100%;
+  }
+
+  .nav-list {
+    position: initial;
+    top: initial;
+    left: initial;
+    transform: translateX(0);
+    width: auto;
+    background-color: transparent;
+    height: initial;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1em;
+  }
+
+  .nav-item {
+    width: auto;
+  }
+
+  .nav-item a {
+    font-size: 0.8rem;
+    color: #fff;
+  }
+
+  .search-container {
+    max-width: 300px;
+    padding-inline: 1em;
+  }
+
+  .search-container input {
+    width: 100%;
+  }
+
+  .menu-btns{
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .header {
+    padding: 1em 15em;
+  }
+}
+
+/* Showcase */
+.showcase {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  background: url("/images/restaurant.png") no-repeat center;
+  background-size: cover;
+}
+
+.showcase-container {
+  height: 100%;
+  width: 100%;
+  padding-top: 9em;
+}
+
+.showcase-text {
+  width: 50%;
+  padding-left: 1em;
+}
+
+.showcase-text h4 {
+  font-weight: 500;
+}
+
+.showcase-text h1 {
+  font-size: 3rem;
+  line-height: 1.1;
+  font-weight: bolder;
+}
+
+.showcase-detail {
+  width: 100%;
+  margin-top: 2em;
+}
+
+.showcase-detail .row {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em 3.5em 1em 1.2em;
+  border-top-right-radius: 3em;
+  border-bottom-right-radius: 3em;
+}
+
+.showcase-detail .row .title {
+  text-overflow: ellipsis;
+  font-size: 0.9rem;
+  font-weight: bold;
+  width: 50%;
+}
+
+.showcase-detail .row .number {
+  font-weight: 400;
+}
+
+.showcase-detail .active {
+  background-color: #ec6507;
+}
+
+@media screen and (min-width: 450px) {
+  .showcase-detail .row {
+    width: 80%;
+  }
+
+  .showcase-text h1 {
+    font-size: 5rem;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .showcase-container{
+    padding-top: 14em;
+  }
+
+  .showcase-detail .row {
+    width: 40%;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .showcase-container{
+    padding-top: 14em;
+  }
+  .showcase-text h1 {
+    font-size: 7rem;
+  }
+  .showcase-text {
+    padding-left: 15em;
+  }
+
+  .showcase-detail .row {
+    padding: 1em 3.5em 1em 15em;
+  }
+}
+
+/* Flavors Section */
+.flavor {
+  margin-top: 2em;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 0 1em .5em 1em;
+}
+
+.flavor-card {
+  position: relative;
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  /* background-color: #ec6507 */
+  z-index: 1;
+}
+
+.flavor-detail {
+  position: absolute;
+  top: 0;
+  left: 3em;
+  z-index: 2;
+  padding: 0.5em 1em;
+  border-radius: 6em;
+  background-color: #b1a79f;
+}
+
+.flavor-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80%;
+  z-index: -1;
+  padding: 0.8em 1.5em;
+  border-radius: 3em;
+  text-align: end;
+  background-color: #ec6507;
+}
+
+.flavor-label p {
+  font-size: 1.5rem;
+}
+
+.flavor-card img {
+  width: 50%;
+  height: 240px;
+  min-width: 140px;
+  max-width: 200px;
+  object-fit: contain;
+  transform: translateY(-20%) translateX(-10%);
+  /* object-position: 20px; */
+}
+
+@media screen and (min-width: 620px) {
+  .flavor {
+    flex-direction: row;
+  }
+
+  .flavor-card {
+    position: relative;
+    width: 30%;
+    height: 150px;
+    overflow: hidden;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .flavor {
+    padding-left: 15em;
+  }
+}
